@@ -1,0 +1,198 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ivan Leite - Especialista em Desenvolvimento de Sites Políticos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff9e6;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #ffcc00;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #ffcc00;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #ffcc00;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .btn-zap {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        .chatbot {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background-color: #ffcc00;
+            color: #333;
+            border: 2px solid #333;
+            padding: 15px;
+            border-radius: 10px;
+            display: none;
+            z-index: 1000;
+        }
+        .chatbot textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .chatbot button {
+            background-color: #333;
+            color: #ffcc00;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function toggleChatbot() {
+            const chatbot = document.getElementById('chatbot');
+            chatbot.style.display = chatbot.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Ivan Leite</h1>
+        <p>Especialista em Desenvolvimento de Sites Políticos</p>
+    </header>
+    <nav>
+        <a href="#home">Página Inicial</a>
+        <a href="#about">Sobre</a>
+        <a href="#events">Calendário de Eventos</a>
+        <a href="#gallery">Galeria de Fotos</a>
+    </nav>
+    <section id="home">
+        <h2>Página Inicial</h2>
+        <p>Bem-vindo ao site de Ivan Leite, especialista em desenvolvimento de sites para candidatos a Prefeito e Vereador. Oferecemos soluções completas para sua campanha eleitoral, incluindo integração com redes sociais e atendimento humanizado via WhatsApp.</p>
+    </section>
+    <section id="about">
+        <h2>Sobre</h2>
+        <p>Ivan Leite é um profissional com vasta experiência em:</p>
+        <ul>
+            <li>Desenvolvimento de sites para candidatos a Prefeito e Vereador.</li>
+            <li>Integração das redes sociais (Instagram, Twitter, Facebook) com o site e com o WhatsApp.</li>
+            <li>Implementação de botões de WhatsApp para atendimento por robô com ChatGPT integrado, proporcionando um atendimento humanizado e disponível 24 horas por dia.</li>
+        </ul>
+    </section>
+    <section id="events">
+        <h2>Calendário de Eventos</h2>
+        <form>
+            <label for="event-name">Nome do Evento:</label>
+            <input type="text" id="event-name" name="event-name" required><br><br>
+            <label for="event-date">Data do Evento:</label>
+            <input type="date" id="event-date" name="event-date" required><br><br>
+            <label for="participant-name">Seu Nome:</label>
+            <input type="text" id="participant-name" name="participant-name" required><br><br>
+            <label for="participant-email">Seu E-mail:</label>
+            <input type="email" id="participant-email" name="participant-email" required><br><br>
+            <button type="submit">Inscrever-se</button>
+        </form>
+    </section>
+    <section id="gallery">
+        <h2>Galeria de Fotos</h2>
+        <img src="https://via.placeholder.com/150" alt="Foto de Perfil Político">
+    </section>
+    <footer>
+        <p>&copy; 2024 Ivan Leite - Todos os direitos reservados</p>
+    </footer>
+
+    <button class="btn-zap" onclick="window.open('https://api.whatsapp.com/send?phone=5527981295754', '_blank')">
+        ZAP
+    </button>
+
+    <div class="chatbot" id="chatbot">
+        <h3>ChatBot</h3>
+        <p>Como posso ajudar?</p>
+        <textarea id="chat-input" placeholder="Digite sua mensagem..."></textarea>
+        <button onclick="sendChat()">Enviar</button>
+    </div>
+
+    <script>
+        function sendChat() {
+            const message = document.getElementById('chat-input').value;
+            alert(`Mensagem enviada: ${message}`);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const btnZap = document.createElement('div');
+            btnZap.className = 'btn-zap';
+            btnZap.innerHTML = '<img src="https://image.flaticon.com/icons/png/512/124/124034.png" alt="WhatsApp">';
+            btnZap.onclick = () => {
+                window.open('https://api.whatsapp.com/send?phone=5527981295754', '_blank');
+            };
+            document.body.appendChild(btnZap);
+        });
+    </script>
+</body>
+</html>
+```
+
+### Como Utilizar Este Arquivo HTML
+
+1. **Criação do Arquivo HTML:**
+   - Abra um editor de texto simples (como Notepad no Windows, TextEdit no Mac) ou um editor de código (como VS Code, Sublime Text).
+   - Copie e cole o código HTML acima no editor.
+   - Salve o arquivo com a extensão `.html`, por exemplo, `index.html`.
+
+2. **Hospedagem do Site:**
+   - **GitHub Pages:**
+     - Crie um repositório no GitHub.
+     - Carregue o arquivo `index.html` para o repositório.
+     - Ative o GitHub Pages nas configurações do repositório.
+     - O site estará disponível no link fornecido pelo GitHub Pages.
+   - **Netlify:**
+     - Faça login no Netlify.
+     - Crie um novo site a partir do repositório GitHub onde você carregou o arquivo `index.html`.
+   - **Vercel:**
+     - Faça login no Vercel.
+     - Crie um novo projeto importando o repositório do GitHub.
+
+3. **Testar e Verificar:**
+   - Acesse o link do site fornecido pela plataforma de hospedagem.
+   - Verifique se todas as seções e funcionalidades estão funcionando corretamente.
+
+### Personalização e Ajustes
+
+- **Imagem de Perfil:** Atualize o URL da imagem de perfil política na seção "Galeria de Fotos" com a imagem desejada.
+- **Formulário de Inscrição:** Ajuste o formulário de inscrição para enviar os dados para um endpoint específico ou um serviço de e-mail.
+- **ChatBot:** Integrar com uma solução de chatbot real para respostas automatizadas.
+
+Com estas etapas, você terá um site estático profissional pronto para promover a venda de sites para candidatos a prefeito e vereador no Espírito Santo.
